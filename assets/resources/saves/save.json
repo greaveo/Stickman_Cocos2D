@@ -1,0 +1,14 @@
+{
+    "playerState" : {
+        "record" : 0,
+        "soundToggle" : true,
+        "softAssets" : 0,
+        
+        "lastSessionState" :{
+            "score": 0,
+            "attemptsLeft": 3,
+            "platformPassed": 0,
+            "environmentVisualId": "Summer"
+            }
+    }
+}
