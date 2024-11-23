@@ -388,7 +388,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "playerState": {
+    "playerStateModel": {
       "__id__": 9
     },
     "_id": "19WCtfIVNMbZCax0sXddI0"

@@ -1,6 +1,6 @@
 import { _decorator } from 'cc';
-import { PlayerState } from '../State/PlayerState';
 import { IDataService } from './IDataService';
+import { PlayerState } from '../State/PlayerState';
 
 export class DummyJsonDataService implements IDataService<PlayerState> {
     private readonly storageKey: string = "playerState"; 
@@ -26,6 +26,7 @@ export class DummyJsonDataService implements IDataService<PlayerState> {
     async Save(data: PlayerState): Promise<void> {
         try {
             const jsonString = JSON.stringify(data);
+            console.log("Start saving");
             window.localStorage.setItem(this.storageKey, jsonString);
             console.log("Player state saved successfully:", data);
         } catch (error) {

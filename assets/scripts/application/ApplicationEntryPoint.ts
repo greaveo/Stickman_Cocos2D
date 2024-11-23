@@ -1,24 +1,23 @@
 import { _decorator, Component, Node } from 'cc';
 import { IDataService } from './IDataService';
-import { PlayerState } from '../State/PlayerState';
+import { PlayerStateModel } from '../State/PlayerStateModel';
 import { DummyJsonDataService } from './DataService';
+import { PlayerState } from '../State/PlayerState';
 const { ccclass, property } = _decorator;
 
 @ccclass('ApplicationEntryPoint')
 export class ApplicationEntryPoint extends Component {
 
-    @property(PlayerState) private playerState : PlayerState;
+    @property(PlayerStateModel) private playerStateModel : PlayerStateModel;
 
     private dataService : IDataService<PlayerState> = new DummyJsonDataService();
 
     async start() {
-        console.log('started');
-        await this.dataService.Save(this.playerState.ToJson);
-       // var data = await this.dataService.Load();
-        console.log('saved');
-        console.log(this.playerState);
-       // this.playerState.Initialize(data);
-       // console.log(this.playerState.LastSetssionState().EnvironmentVisualId);
+        var load = await this.dataService.Load();
+        console.log(this.playerStateModel);
+        console.log(load);
+        this.playerStateModel.Initialize(load);
+       console.log(this.playerStateModel.PlayerState().SessionState.EnvironmentVisualId);
     }
 
 
