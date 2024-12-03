@@ -1,3 +1,36 @@
 {
-  "__version__": "1.0.6"
+  "__version__": "1.0.6",
+  "general": {
+    "designResolution": {
+      "width": 1080,
+      "height": 1920,
+      "fitHeight": true,
+      "fitWidth": false
+    }
+  },
+  "layer": [
+    {
+      "name": "LOAD_SCREEN",
+      "value": 1
+    },
+    {
+      "name": "BG",
+      "value": 2
+    }
+  ],
+  "sorting-layer": {
+    "layers": [
+      {
+        "id": 0,
+        "name": "default",
+        "value": 0
+      },
+      {
+        "id": 1,
+        "name": "load_screen",
+        "value": 1
+      }
+    ],
+    "increaseId": 1
+  }
 }
